@@ -12,7 +12,7 @@ function makeTimeZoneButtons() {
 
 function createMultiButtons(timezones) {
     // make buttons somehow
-    timezone.array.forEach(zone => {
+    timezone.forEach(zone => {
         button = document.createElement('button');
         button.setAttribute("id", zone);
         button.onClick(() => {
