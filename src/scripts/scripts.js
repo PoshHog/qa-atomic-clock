@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function makeTimeZoneButtons(){
     const res = jQuery.getJSON("http://worldtimeapi.org/api/timezone");
-    const timezones = res.content
+    const timezones = res.content;
     createMultiButtons(timezones)
 }
 
@@ -17,14 +17,15 @@ function createMultiButtons(timezones){
         button.setAttribute("id", zone);
         button.onClick(() => {
             const res = jQuery.getJSON("http://worldtimeapi.org/api/timezone/" + zone);
-            makeCityButtons(region)  
+            cities = res.content;
+            makeCityButtons(cities)  
         })
 
     });
 }
 
-function makeCityButtons(region) {
-    // same as above but cities
+function makeCityButtons(cities) {
+    // same as above but regions->cities
      .onclick(()=>{
         const res = jQuery.getJSON("http://worldtimeapi.org/api/timezone/" + timezone + "/" + city);
         })
